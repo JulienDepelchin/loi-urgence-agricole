@@ -34,8 +34,7 @@
   },
   "sources_elus": "Répertoire national des élus (RNE) — fichiers elus-deputes-dep.csv et elus-senateurs-sen.csv fournis par l'utilisateur",
   "avertissements": [
-    "Les 6e et 10e circonscriptions du Nord sont absentes du fichier RNE fourni (elus-deputes-dep.csv) — siège vacant ou export incomplet, à vérifier avant publication.",
-    "La 17e circonscription du Nord liste deux titulaires dans le RNE (Thierry Tesson, mandat depuis le 2024-07-08, puis Vincent Ledoux, mandat depuis le 2025-01-24). Le titulaire retenu est celui dont le mandat a débuté le plus récemment (Vincent Ledoux).",
+    "Deux erreurs de codification ont été identifiées et corrigées dans le fichier RNE fourni (elus-deputes-dep.csv), confirmées par l'utilisateur : (1) Charlotte Parmentier-Lecocq, députée de la 6e circonscription du Nord, y était rattachée par erreur à la Moselle (57) / 6e circonscription — elle a été réintégrée manuellement avec son vote (PA720480, HOR, Pour) ; (2) la 10e circonscription du Nord était absente et Vincent Ledoux (PA712014) y apparaissait à tort sous la 17e circonscription, dupliquant la ligne de Thierry Tesson — Vincent Ledoux (suppléant de Gérald Darmanin) a été repositionné sur la 10e circonscription et Thierry Tesson (PA841553, RN, Pour) rétabli comme seul titulaire de la 17e circonscription.",
     "Le fichier Scrutins.xml.zip initialement fourni ne couvrait que la 16e législature (2022-2024, scrutins jusqu'au n°4105) et n'a pas pu être utilisé pour ce scrutin de la 17e législature ; les données de vote ont été extraites directement des pages HTML officielles de l'Assemblée nationale et du Sénat.",
     "Les photos sont d'origine officielle (assemblee-nationale.fr / senat.fr) et sont fournies dans data/photos/ ; conserver le crédit photo indiqué dans chaque enregistrement (photo_credit)."
   ]

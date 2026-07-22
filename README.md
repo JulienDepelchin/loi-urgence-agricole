@@ -14,10 +14,10 @@ Deux scrutins couverts :
 
 ```
 data/
-  elus_votes.json     Jeu de données final (49 élus) — à consommer par l'application
+  elus_votes.json     Jeu de données final (51 élus) — à consommer par l'application
   meta.json           Métadonnées des deux scrutins, sources, avertissements méthodologiques
   photos/
-    deputes/           31 portraits officiels (Assemblée nationale), nommés par identifiant PA
+    deputes/           33 portraits officiels (Assemblée nationale), nommés par identifiant PA
     senateurs/         18 portraits officiels (Sénat), nommés par slug sénat.fr
 
 sources/               Sources brutes utilisées pour construire le jeu de données (traçabilité)
@@ -36,7 +36,7 @@ prototype/
 
 ## Schéma de `data/elus_votes.json`
 
-Tableau de 49 objets, un par élu :
+Tableau de 51 objets, un par élu :
 
 | Champ              | Description                                                              |
 |---------------------|---------------------------------------------------------------------------|
@@ -52,15 +52,21 @@ Tableau de 49 objets, un par élu :
 | `photo_credit`      | `"Assemblée nationale"` ou `"Sénat"` — à afficher en légende de la photo  |
 | `photo_source_url`  | URL d'origine de la photo, pour référence                                |
 | `fiche_url`         | Lien vers la fiche officielle de l'élu (assemblee-nationale.fr / senat.fr) |
+| `note`              | Précision ponctuelle sur le mandat (ex. suppléance) — vide pour la plupart des élus |
 
 ## Avertissements méthodologiques (voir aussi `data/meta.json`)
 
-- Les **6ᵉ et 10ᵉ circonscriptions du Nord** sont absentes du fichier RNE fourni
-  (`elus-deputes-dep.csv`) — siège vacant ou export incomplet à la date de récupération, à vérifier
-  avant toute publication.
-- La **17ᵉ circonscription du Nord** liste deux titulaires dans le RNE (Thierry Tesson, mandat
-  depuis le 08/07/2024, puis Vincent Ledoux, mandat depuis le 24/01/2025). Le titulaire retenu dans
-  `elus_votes.json` est celui dont le mandat a débuté le plus récemment (Vincent Ledoux).
+Deux erreurs de codification du fichier RNE fourni (`elus-deputes-dep.csv`) ont été identifiées et
+corrigées, avec confirmation directe de l'utilisateur :
+
+- **Charlotte Parmentier-Lecocq** (6ᵉ circonscription du Nord) était rattachée par erreur à la
+  Moselle (57) / 6ᵉ circonscription dans le RNE — sa ligne (`PA720480`, groupe HOR, vote Pour) a été
+  réintégrée manuellement au Nord.
+- La **10ᵉ circonscription du Nord** était absente du RNE, et **Vincent Ledoux** (`PA712014`) y
+  apparaissait à tort sous la 17ᵉ circonscription, dupliquant la ligne de Thierry Tesson. Vincent
+  Ledoux (suppléant de Gérald Darmanin, cf. champ `note`) a été repositionné sur la 10ᵉ
+  circonscription ; **Thierry Tesson** (`PA841553`, groupe RN, vote Pour) a été rétabli comme seul
+  titulaire de la 17ᵉ circonscription.
 - Aucun élu du périmètre Nord / Pas-de-Calais n'était classé « non votant » sur les deux scrutins.
 
 ## Pour Lovable / reconstruction de l'application

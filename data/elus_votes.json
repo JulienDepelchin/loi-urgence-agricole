@@ -12,7 +12,8 @@
     "photo": "photos/deputes/PA267763.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/267763.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA267763"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA267763",
+    "note": ""
   },
   {
     "prenom": "Shéhérazade",
@@ -27,7 +28,8 @@
     "photo": "photos/deputes/PA841531.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841531.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841531"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841531",
+    "note": ""
   },
   {
     "prenom": "Ugo",
@@ -42,7 +44,8 @@
     "photo": "photos/deputes/PA720430.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720430.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720430"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720430",
+    "note": ""
   },
   {
     "prenom": "Jean",
@@ -57,7 +60,8 @@
     "photo": "photos/deputes/PA841543.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841543.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841543"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841543",
+    "note": ""
   },
   {
     "prenom": "Sébastien",
@@ -72,7 +76,8 @@
     "photo": "photos/deputes/PA720468.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720468.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720468"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720468",
+    "note": ""
   },
   {
     "prenom": "Sandra",
@@ -87,7 +92,8 @@
     "photo": "photos/deputes/PA840119.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840119.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840119"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840119",
+    "note": ""
   },
   {
     "prenom": "Alexandre",
@@ -102,7 +108,8 @@
     "photo": "photos/deputes/PA840135.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840135.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840135"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840135",
+    "note": ""
   },
   {
     "prenom": "Guillaume",
@@ -117,7 +124,8 @@
     "photo": "photos/deputes/PA840143.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840143.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840143"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840143",
+    "note": ""
   },
   {
     "prenom": "Félicie",
@@ -132,7 +140,8 @@
     "photo": "photos/deputes/PA794470.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794470.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794470"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794470",
+    "note": ""
   },
   {
     "prenom": "Sébastien",
@@ -147,7 +156,8 @@
     "photo": "photos/deputes/PA267200.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/267200.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA267200"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA267200",
+    "note": ""
   },
   {
     "prenom": "Aurélien",
@@ -162,7 +172,8 @@
     "photo": "photos/deputes/PA841515.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841515.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841515"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841515",
+    "note": ""
   },
   {
     "prenom": "Vincent",
@@ -170,14 +181,15 @@
     "qualite": "Député",
     "departement": "Nord",
     "code_departement": "59",
-    "circonscription": "17e circonscription",
+    "circonscription": "10e circonscription",
     "groupe_sigle": "EPR",
     "groupe_nom": "Ensemble pour la République",
     "vote": "Pour",
     "photo": "photos/deputes/PA712014.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/712014.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA712014"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA712014",
+    "note": "Suppléant de Gérald Darmanin"
   },
   {
     "prenom": "Brigitte",
@@ -192,7 +204,8 @@
     "photo": "photos/deputes/PA720446.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720446.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720446"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720446",
+    "note": ""
   },
   {
     "prenom": "Valérie",
@@ -207,7 +220,8 @@
     "photo": "photos/deputes/PA227089.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/227089.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA227089"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA227089",
+    "note": ""
   },
   {
     "prenom": "Matthieu",
@@ -222,7 +236,8 @@
     "photo": "photos/deputes/PA794530.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794530.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794530"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794530",
+    "note": ""
   },
   {
     "prenom": "Pierre",
@@ -237,7 +252,24 @@
     "photo": "photos/deputes/PA794518.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794518.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794518"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794518",
+    "note": ""
+  },
+  {
+    "prenom": "Charlotte",
+    "nom": "PARMENTIER-LECOCQ",
+    "qualite": "Député",
+    "departement": "Nord",
+    "code_departement": "59",
+    "circonscription": "6e circonscription",
+    "groupe_sigle": "HOR",
+    "groupe_nom": "Horizons & Indépendants",
+    "vote": "Pour",
+    "photo": "photos/deputes/PA720480.jpg",
+    "photo_credit": "Assemblée nationale",
+    "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720480.jpg",
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720480",
+    "note": ""
   },
   {
     "prenom": "Violette",
@@ -252,7 +284,8 @@
     "photo": "photos/deputes/PA794486.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794486.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794486"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794486",
+    "note": ""
   },
   {
     "prenom": "Michael",
@@ -267,7 +300,24 @@
     "photo": "photos/deputes/PA794502.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794502.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794502"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794502",
+    "note": ""
+  },
+  {
+    "prenom": "Thierry",
+    "nom": "TESSON",
+    "qualite": "Député",
+    "departement": "Nord",
+    "code_departement": "59",
+    "circonscription": "17e circonscription",
+    "groupe_sigle": "RN",
+    "groupe_nom": "Rassemblement National",
+    "vote": "Pour",
+    "photo": "photos/deputes/PA841553.jpg",
+    "photo_credit": "Assemblée nationale",
+    "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841553.jpg",
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841553",
+    "note": ""
   },
   {
     "prenom": "Roger",
@@ -282,7 +332,8 @@
     "photo": "photos/deputes/PA794494.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794494.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794494"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794494",
+    "note": ""
   },
   {
     "prenom": "Alexandre",
@@ -297,7 +348,8 @@
     "photo": "photos/senateurs/basquin_alexandre21460q.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/basquin_alexandre21460q_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/basquin_alexandre21460q.html"
+    "fiche_url": "https://www.senat.fr/senateur/basquin_alexandre21460q.html",
+    "note": ""
   },
   {
     "prenom": "Guislain",
@@ -312,7 +364,8 @@
     "photo": "photos/senateurs/cambier_guislain21083k.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/cambier_guislain21083k_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/cambier_guislain21083k.html"
+    "fiche_url": "https://www.senat.fr/senateur/cambier_guislain21083k.html",
+    "note": ""
   },
   {
     "prenom": "Marc-Philippe",
@@ -327,7 +380,8 @@
     "photo": "photos/senateurs/daubresse_marc_philippe04008a.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/daubresse_marc_philippe04008a_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/daubresse_marc_philippe04008a.html"
+    "fiche_url": "https://www.senat.fr/senateur/daubresse_marc_philippe04008a.html",
+    "note": ""
   },
   {
     "prenom": "Franck",
@@ -342,7 +396,8 @@
     "photo": "photos/senateurs/dhersin_franck15197g.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/dhersin_franck15197g_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/dhersin_franck15197g.html"
+    "fiche_url": "https://www.senat.fr/senateur/dhersin_franck15197g.html",
+    "note": ""
   },
   {
     "prenom": "Michelle",
@@ -357,7 +412,8 @@
     "photo": "photos/senateurs/greaume_michelle19565d.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/greaume_michelle19565d_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/greaume_michelle19565d.html"
+    "fiche_url": "https://www.senat.fr/senateur/greaume_michelle19565d.html",
+    "note": ""
   },
   {
     "prenom": "Olivier",
@@ -372,7 +428,8 @@
     "photo": "photos/senateurs/henno_olivier19569h.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/henno_olivier19569h_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/henno_olivier19569h.html"
+    "fiche_url": "https://www.senat.fr/senateur/henno_olivier19569h.html",
+    "note": ""
   },
   {
     "prenom": "Joshua",
@@ -387,7 +444,8 @@
     "photo": "photos/senateurs/hochart_joshua21085m.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/hochart_joshua21085m_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/hochart_joshua21085m.html"
+    "fiche_url": "https://www.senat.fr/senateur/hochart_joshua21085m.html",
+    "note": ""
   },
   {
     "prenom": "Patrick",
@@ -402,7 +460,8 @@
     "photo": "photos/senateurs/kanner_patrick14021p.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/kanner_patrick14021p_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/kanner_patrick14021p.html"
+    "fiche_url": "https://www.senat.fr/senateur/kanner_patrick14021p.html",
+    "note": ""
   },
   {
     "prenom": "Marie-Claude",
@@ -417,7 +476,8 @@
     "photo": "photos/senateurs/lermytte_marie_claude21087p.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/lermytte_marie_claude21087p_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/lermytte_marie_claude21087p.html"
+    "fiche_url": "https://www.senat.fr/senateur/lermytte_marie_claude21087p.html",
+    "note": ""
   },
   {
     "prenom": "Audrey",
@@ -432,7 +492,8 @@
     "photo": "photos/senateurs/linkenheld_audrey18207d.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/linkenheld_audrey18207d_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/linkenheld_audrey18207d.html"
+    "fiche_url": "https://www.senat.fr/senateur/linkenheld_audrey18207d.html",
+    "note": ""
   },
   {
     "prenom": "Dany",
@@ -447,7 +508,8 @@
     "photo": "photos/senateurs/wattebled_dany19585h.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/wattebled_dany19585h_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/wattebled_dany19585h.html"
+    "fiche_url": "https://www.senat.fr/senateur/wattebled_dany19585h.html",
+    "note": ""
   },
   {
     "prenom": "Bruno",
@@ -462,7 +524,8 @@
     "photo": "photos/deputes/PA720822.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720822.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720822"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720822",
+    "note": ""
   },
   {
     "prenom": "Emmanuel",
@@ -477,7 +540,8 @@
     "photo": "photos/deputes/PA720668.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720668.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720668"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720668",
+    "note": ""
   },
   {
     "prenom": "Bruno",
@@ -492,7 +556,8 @@
     "photo": "photos/deputes/PA840159.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840159.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840159"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840159",
+    "note": ""
   },
   {
     "prenom": "Marc",
@@ -507,7 +572,8 @@
     "photo": "photos/deputes/PA841613.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841613.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841613"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841613",
+    "note": ""
   },
   {
     "prenom": "Christine",
@@ -522,7 +588,8 @@
     "photo": "photos/deputes/PA794718.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794718.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794718"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794718",
+    "note": ""
   },
   {
     "prenom": "Auguste",
@@ -537,7 +604,8 @@
     "photo": "photos/deputes/PA841621.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841621.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841621"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841621",
+    "note": ""
   },
   {
     "prenom": "Philippe",
@@ -552,7 +620,8 @@
     "photo": "photos/deputes/PA794658.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794658.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794658"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794658",
+    "note": ""
   },
   {
     "prenom": "Thierry",
@@ -567,7 +636,8 @@
     "photo": "photos/deputes/PA794678.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794678.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794678"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794678",
+    "note": ""
   },
   {
     "prenom": "Antoine",
@@ -582,7 +652,8 @@
     "photo": "photos/deputes/PA841605.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841605.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841605"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841605",
+    "note": ""
   },
   {
     "prenom": "Marine",
@@ -597,7 +668,8 @@
     "photo": "photos/deputes/PA720614.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720614.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720614"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720614",
+    "note": ""
   },
   {
     "prenom": "Agnès",
@@ -612,7 +684,8 @@
     "photo": "photos/deputes/PA759832.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/759832.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA759832"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA759832",
+    "note": ""
   },
   {
     "prenom": "Caroline",
@@ -627,7 +700,8 @@
     "photo": "photos/deputes/PA794670.jpg",
     "photo_credit": "Assemblée nationale",
     "photo_source_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794670.jpg",
-    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794670"
+    "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794670",
+    "note": ""
   },
   {
     "prenom": "Cathy",
@@ -642,7 +716,8 @@
     "photo": "photos/senateurs/apourceau_poly_cathy19760e.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/apourceau_poly_cathy19760e_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/apourceau_poly_cathy19760e.html"
+    "fiche_url": "https://www.senat.fr/senateur/apourceau_poly_cathy19760e.html",
+    "note": ""
   },
   {
     "prenom": "Brigitte",
@@ -657,7 +732,8 @@
     "photo": "photos/senateurs/bourguignon_brigitte18045d.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/bourguignon_brigitte18045d_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/bourguignon_brigitte18045d.html"
+    "fiche_url": "https://www.senat.fr/senateur/bourguignon_brigitte18045d.html",
+    "note": ""
   },
   {
     "prenom": "Jean-Pierre",
@@ -672,7 +748,8 @@
     "photo": "photos/senateurs/corbisez_jean_pierre19681g.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/corbisez_jean_pierre19681g_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/corbisez_jean_pierre19681g.html"
+    "fiche_url": "https://www.senat.fr/senateur/corbisez_jean_pierre19681g.html",
+    "note": ""
   },
   {
     "prenom": "Jérôme",
@@ -687,7 +764,8 @@
     "photo": "photos/senateurs/darras_jerome21067k.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/darras_jerome21067k_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/darras_jerome21067k.html"
+    "fiche_url": "https://www.senat.fr/senateur/darras_jerome21067k.html",
+    "note": ""
   },
   {
     "prenom": "Amel",
@@ -702,7 +780,8 @@
     "photo": "photos/senateurs/gacquerre_amel20286q.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/gacquerre_amel20286q_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/gacquerre_amel20286q.html"
+    "fiche_url": "https://www.senat.fr/senateur/gacquerre_amel20286q.html",
+    "note": ""
   },
   {
     "prenom": "Jean-François",
@@ -717,7 +796,8 @@
     "photo": "photos/senateurs/rapin_jean_francois14331p.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/rapin_jean_francois14331p_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/rapin_jean_francois14331p.html"
+    "fiche_url": "https://www.senat.fr/senateur/rapin_jean_francois14331p.html",
+    "note": ""
   },
   {
     "prenom": "Christopher",
@@ -732,6 +812,7 @@
     "photo": "photos/senateurs/szczurek_christopher21069m.jpg",
     "photo_credit": "Sénat",
     "photo_source_url": "https://www.senat.fr/senimg/szczurek_christopher21069m_carre.jpg",
-    "fiche_url": "https://www.senat.fr/senateur/szczurek_christopher21069m.html"
+    "fiche_url": "https://www.senat.fr/senateur/szczurek_christopher21069m.html",
+    "note": ""
   }
 ]
