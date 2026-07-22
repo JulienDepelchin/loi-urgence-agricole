@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loi d'urgence agricole — Comment ont voté vos élus (Nord &amp; Pas-de-Calais)</title>
+<style>
+  :root {
+    --paper: #f6f3ec;
+    --paper-raised: #fffdf8;
+    --ink: #22302b;
+    --ink-soft: #5b6b62;
+    --ink-faint: #8a938b;
+    --accent: #a8702c;
+    --accent-soft: #e8dcc8;
+    --line: #ddd6c7;
+    --pour: #3f7a52;
+    --pour-bg: #e3ede4;
+    --contre: #a8402f;
+    --contre-bg: #f2e2de;
+    --abstention: #8c7431;
+    --abstention-bg: #ece5d2;
+    --nonvotant: #7a7a74;
+    --nonvotant-bg: #e7e5df;
+    --shadow: 0 1px 2px rgba(34,48,43,0.06), 0 4px 14px rgba(34,48,43,0.05);
+    --radius: 10px;
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #171d1a;
+    --paper-raised: #202822;
+    --ink: #ece9e0;
+    --ink-soft: #a9b2a7;
+    --ink-faint: #767f74;
+    --accent: #d9a256;
+    --accent-soft: #3a3222;
+    --line: #333c34;
+    --pour: #6fbb87;
+    --pour-bg: #24352a;
+    --contre: #e08972;
+    --contre-bg: #3a2723;
+    --abstention: #cdb46f;
+    --abstention-bg: #37311f;
+    --nonvotant: #a3a39b;
+    --nonvotant-bg: #2b2f2b;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 6px 20px rgba(0,0,0,0.25);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #171d1a;
+      --paper-raised: #202822;
+      --ink: #ece9e0;
+      --ink-soft: #a9b2a7;
+      --ink-faint: #767f74;
+      --accent: #d9a256;
+      --accent-soft: #3a3222;
+      --line: #333c34;
+      --pour: #6fbb87;
+      --pour-bg: #24352a;
+      --contre: #e08972;
+      --contre-bg: #3a2723;
+      --abstention: #cdb46f;
+      --abstention-bg: #37311f;
+      --nonvotant: #a3a39b;
+      --nonvotant-bg: #2b2f2b;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 6px 20px rgba(0,0,0,0.25);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.45;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 4rem;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 62ch;
+  }
+
+  .source-note {
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+  }
+  .source-note a { color: var(--ink-faint); }
+
+  /* Stat strip */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .stat-tile {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .stat-tile .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .stat-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    display: inline-block;
+    flex: none;
+  }
+
+  .stat-tile .stat-value {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 1.55rem;
+    margin-top: 0.15rem;
+  }
+
+  .stat-bar {
+    height: 5px;
+    border-radius: 3px;
+    background: var(--line);
+    margin-top: 0.5rem;
+    overflow: hidden;
+  }
+  .stat-bar > div { height: 100%; }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    padding: 0.75rem 0;
+    z-index: 5;
+  }
+
+  .search-box {
+    flex: 1 1 240px;
+    position: relative;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.6rem 0.9rem 0.6rem 2.2rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .search-box input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .search-box::before {
+    content: "";
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    width: 13px; height: 13px;
+    transform: translateY(-50%);
+    border: 1.5px solid var(--ink-faint);
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  .search-box::after {
+    content: "";
+    position: absolute;
+    left: 1.62rem;
+    top: 62%;
+    width: 6px;
+    height: 1.5px;
+    background: var(--ink-faint);
+    transform: rotate(45deg);
+  }
+
+  select {
+    padding: 0.55rem 1.9rem 0.55rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--paper-raised) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M0 0l5 6 5-6z" fill="%235b6b62"/></svg>') no-repeat right 0.8rem center;
+    color: var(--ink);
+    font-size: 0.88rem;
+    appearance: none;
+    cursor: pointer;
+  }
+  select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .result-count {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .result-count b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  /* Card grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.9rem;
+    display: flex;
+    gap: 0.75rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .card .photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex: none;
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+  }
+
+  .card .info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .card .name {
+    font-weight: 600;
+    font-size: 0.98rem;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .card .name a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card .name a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+
+  .card .role {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.15rem;
+  }
+
+  .pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .pill.groupe {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .pill.vote-pour { background: var(--pour-bg); color: var(--pour); }
+  .pill.vote-contre { background: var(--contre-bg); color: var(--contre); }
+  .pill.vote-abstention { background: var(--abstention-bg); color: var(--abstention); }
+  .pill.vote-nonvotant { background: var(--nonvotant-bg); color: var(--nonvotant); }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--ink-faint);
+    font-size: 0.95rem;
+  }
+
+  footer {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+  footer a { color: var(--ink-faint); }
+
+  @media (max-width: 480px) {
+    .card { flex-direction: row; }
+    .controls { flex-direction: column; align-items: stretch; }
+    select { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">Scrutin · Loi d'urgence pour la protection et la souveraineté agricoles</span>
+    <h1>Comment ont voté les députés et sénateurs du Nord et du Pas-de-Calais</h1>
+    <p class="subtitle">Assemblée nationale — scrutin n°8427 du 20 juillet 2026 (2ᵉ séance). Sénat — scrutin n°340 du 21 juillet 2026. Recherchez un élu ou filtrez par mandat, département, groupe politique ou vote.</p>
+    <p class="source-note">Sources : <a href="https://www.assemblee-nationale.fr/dyn/17/scrutins/8427" target="_blank" rel="noopener">assemblee-nationale.fr</a>, <a href="https://www.senat.fr/scrutin-public/2025/scr2025-340.html" target="_blank" rel="noopener">senat.fr</a>, Répertoire national des élus (RNE).</p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Rechercher un nom…" autocomplete="off">
+    </div>
+    <select id="filter-qualite">
+      <option value="">Député ou sénateur</option>
+      <option value="Député">Députés</option>
+      <option value="Sénateur">Sénateurs</option>
+    </select>
+    <select id="filter-departement">
+      <option value="">Tout département</option>
+      <option value="Nord">Nord</option>
+      <option value="Pas-de-Calais">Pas-de-Calais</option>
+    </select>
+    <select id="filter-groupe">
+      <option value="">Tout groupe politique</option>
+    </select>
+    <select id="filter-vote">
+      <option value="">Tout vote</option>
+      <option value="Pour">Pour</option>
+      <option value="Contre">Contre</option>
+      <option value="Abstention">Abstention</option>
+      <option value="Non votant">Non votant</option>
+    </select>
+  </div>
+
+  <p class="result-count" id="result-count"></p>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    Outil interne — La Voix du Nord. Données croisées à partir du Répertoire national des élus et des scrutins publics de l'Assemblée nationale et du Sénat. Non destiné à publication en l'état.
+  </footer>
+
+</div>
+
+<script>
+const DATA = [{"prenom": "Jean-Pierre", "nom": "BATAILLE", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "15e circonscription", "groupe_sigle": "LIOT", "groupe_nom": "Libertés, Indépendants, Outre-mer et Territoires", "vote": "Abstention", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/267763.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA267763"}, {"prenom": "Shéhérazade", "nom": "BENTORKI", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "8e circonscription", "groupe_sigle": "LFI-NFP", "groupe_nom": "La France insoumise - Nouveau Front Populaire", "vote": "Contre", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841531.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841531"}, {"prenom": "Ugo", "nom": "BERNALICIS", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "2e circonscription", "groupe_sigle": "LFI-NFP", "groupe_nom": "La France insoumise - Nouveau Front Populaire", "vote": "Contre", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720430.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720430"}, {"prenom": "Jean", "nom": "BODART", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "13e circonscription", "groupe_sigle": "LIOT", "groupe_nom": "Libertés, Indépendants, Outre-mer et Territoires", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841543.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841543"}, {"prenom": "Sébastien", "nom": "CHENU", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "19e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720468.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720468"}, {"prenom": "Sandra", "nom": "DELANNOY", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "3e circonscription", "groupe_sigle": "NI", "groupe_nom": "Députés non inscrits", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840119.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840119"}, {"prenom": "Alexandre", "nom": "DUFOSSET", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "18e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840135.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840135"}, {"prenom": "Guillaume", "nom": "FLORQUIN", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "20e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840143.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840143"}, {"prenom": "Félicie", "nom": "GERARD", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "7e circonscription", "groupe_sigle": "HOR", "groupe_nom": "Horizons & Indépendants", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794470.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794470"}, {"prenom": "Sébastien", "nom": "HUYGHE", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "5e circonscription", "groupe_sigle": "EPR", "groupe_nom": "Ensemble pour la République", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/267200.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA267200"}, {"prenom": "Aurélien", "nom": "LE COQ", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "1re circonscription", "groupe_sigle": "LFI-NFP", "groupe_nom": "La France insoumise - Nouveau Front Populaire", "vote": "Contre", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841515.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841515"}, {"prenom": "Vincent", "nom": "LEDOUX", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "17e circonscription", "groupe_sigle": "EPR", "groupe_nom": "Ensemble pour la République", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/712014.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA712014"}, {"prenom": "Brigitte", "nom": "LISO", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "4e circonscription", "groupe_sigle": "EPR", "groupe_nom": "Ensemble pour la République", "vote": "Abstention", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720446.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720446"}, {"prenom": "Valérie", "nom": "LÉTARD", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "21e circonscription", "groupe_sigle": "LIOT", "groupe_nom": "Libertés, Indépendants, Outre-mer et Territoires", "vote": "Abstention", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/227089.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA227089"}, {"prenom": "Matthieu", "nom": "MARCHIO", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "16e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794530.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794530"}, {"prenom": "Pierre", "nom": "MARLE", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "14e circonscription", "groupe_sigle": "HOR", "groupe_nom": "Horizons & Indépendants", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794518.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794518"}, {"prenom": "Violette", "nom": "SPILLEBOUT", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "9e circonscription", "groupe_sigle": "EPR", "groupe_nom": "Ensemble pour la République", "vote": "Abstention", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794486.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794486"}, {"prenom": "Michael", "nom": "TAVERNE", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "12e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794502.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794502"}, {"prenom": "Roger", "nom": "VICOT", "qualite": "Député", "departement": "Nord", "code_departement": "59", "circonscription": "11e circonscription", "groupe_sigle": "SOC", "groupe_nom": "Socialistes et apparentés", "vote": "Contre", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794494.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794494"}, {"prenom": "Alexandre", "nom": "BASQUIN", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "CRCE-K", "groupe_nom": "Communiste Républicain Citoyen et Écologiste - Kanaky", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/basquin_alexandre21460q_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/basquin_alexandre21460q.html"}, {"prenom": "Guislain", "nom": "CAMBIER", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "UC", "groupe_nom": "Union Centriste", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/cambier_guislain21083k_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/cambier_guislain21083k.html"}, {"prenom": "Marc-Philippe", "nom": "DAUBRESSE", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "LR", "groupe_nom": "Les Républicains", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/daubresse_marc_philippe04008a_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/daubresse_marc_philippe04008a.html"}, {"prenom": "Franck", "nom": "DHERSIN", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "UC", "groupe_nom": "Union Centriste", "vote": "Abstention", "photo_url": "https://www.senat.fr/senimg/dhersin_franck15197g_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/dhersin_franck15197g.html"}, {"prenom": "Michelle", "nom": "GRÉAUME", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "CRCE-K", "groupe_nom": "Communiste Républicain Citoyen et Écologiste - Kanaky", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/greaume_michelle19565d_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/greaume_michelle19565d.html"}, {"prenom": "Olivier", "nom": "HENNO", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "UC", "groupe_nom": "Union Centriste", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/henno_olivier19569h_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/henno_olivier19569h.html"}, {"prenom": "Joshua", "nom": "HOCHART", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "NI", "groupe_nom": "Sénateurs ne figurant sur la liste d'aucun groupe", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/hochart_joshua21085m_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/hochart_joshua21085m.html"}, {"prenom": "Patrick", "nom": "KANNER", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "SER", "groupe_nom": "Socialiste, Écologiste et Républicain", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/kanner_patrick14021p_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/kanner_patrick14021p.html"}, {"prenom": "Marie-Claude", "nom": "LERMYTTE", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "LIRT", "groupe_nom": "Les Indépendants - République et Territoires", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/lermytte_marie_claude21087p_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/lermytte_marie_claude21087p.html"}, {"prenom": "Audrey", "nom": "LINKENHELD", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "SER", "groupe_nom": "Socialiste, Écologiste et Républicain", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/linkenheld_audrey18207d_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/linkenheld_audrey18207d.html"}, {"prenom": "Dany", "nom": "WATTEBLED", "qualite": "Sénateur", "departement": "Nord", "code_departement": "59", "circonscription": "", "groupe_sigle": "LIRT", "groupe_nom": "Les Indépendants - République et Territoires", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/wattebled_dany19585h_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/wattebled_dany19585h.html"}, {"prenom": "Bruno", "nom": "BILDE", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "12e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720822.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720822"}, {"prenom": "Emmanuel", "nom": "BLAIRY", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "1re circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720668.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720668"}, {"prenom": "Bruno", "nom": "CLAVET", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "3e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/840159.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA840159"}, {"prenom": "Marc", "nom": "DE FLEURIAN", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "7e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841613.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841613"}, {"prenom": "Christine", "nom": "ENGRAND", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "6e circonscription", "groupe_sigle": "NI", "groupe_nom": "Députés non inscrits", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794718.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794718"}, {"prenom": "Auguste", "nom": "EVRARD", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "8e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841621.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841621"}, {"prenom": "Philippe", "nom": "FAIT", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "4e circonscription", "groupe_sigle": "HOR", "groupe_nom": "Horizons & Indépendants", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794658.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794658"}, {"prenom": "Thierry", "nom": "FRAPPÉ", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "10e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794678.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794678"}, {"prenom": "Antoine", "nom": "GOLLIOT", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "5e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/841605.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA841605"}, {"prenom": "Marine", "nom": "LE PEN", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "11e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/720614.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA720614"}, {"prenom": "Agnès", "nom": "PANNIER-RUNACHER", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "2e circonscription", "groupe_sigle": "EPR", "groupe_nom": "Ensemble pour la République", "vote": "Abstention", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/759832.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA759832"}, {"prenom": "Caroline", "nom": "PARMENTIER", "qualite": "Député", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "9e circonscription", "groupe_sigle": "RN", "groupe_nom": "Rassemblement National", "vote": "Pour", "photo_url": "https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/794670.jpg", "fiche_url": "https://www.assemblee-nationale.fr/dyn/deputes/PA794670"}, {"prenom": "Cathy", "nom": "APOURCEAU-POLY", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "CRCE-K", "groupe_nom": "Communiste Républicain Citoyen et Écologiste - Kanaky", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/apourceau_poly_cathy19760e_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/apourceau_poly_cathy19760e.html"}, {"prenom": "Brigitte", "nom": "BOURGUIGNON", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "UC", "groupe_nom": "Union Centriste", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/bourguignon_brigitte18045d_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/bourguignon_brigitte18045d.html"}, {"prenom": "Jean-Pierre", "nom": "CORBISEZ", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "CRCE-K", "groupe_nom": "Communiste Républicain Citoyen et Écologiste - Kanaky", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/corbisez_jean_pierre19681g_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/corbisez_jean_pierre19681g.html"}, {"prenom": "Jérôme", "nom": "DARRAS", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "SER", "groupe_nom": "Socialiste, Écologiste et Républicain", "vote": "Contre", "photo_url": "https://www.senat.fr/senimg/darras_jerome21067k_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/darras_jerome21067k.html"}, {"prenom": "Amel", "nom": "GACQUERRE", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "UC", "groupe_nom": "Union Centriste", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/gacquerre_amel20286q_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/gacquerre_amel20286q.html"}, {"prenom": "Jean-François", "nom": "RAPIN", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "LR", "groupe_nom": "Les Républicains", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/rapin_jean_francois14331p_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/rapin_jean_francois14331p.html"}, {"prenom": "Christopher", "nom": "SZCZUREK", "qualite": "Sénateur", "departement": "Pas-de-Calais", "code_departement": "62", "circonscription": "", "groupe_sigle": "NI", "groupe_nom": "Sénateurs ne figurant sur la liste d'aucun groupe", "vote": "Pour", "photo_url": "https://www.senat.fr/senimg/szczurek_christopher21069m_carre.jpg", "fiche_url": "https://www.senat.fr/senateur/szczurek_christopher21069m.html"}];
+
+const voteClass = (v) => ({
+  "Pour": "vote-pour",
+  "Contre": "vote-contre",
+  "Abstention": "vote-abstention",
+  "Non votant": "vote-nonvotant",
+}[v] || "vote-nonvotant");
+
+const voteDot = (v) => ({
+  "Pour": "var(--pour)",
+  "Contre": "var(--contre)",
+  "Abstention": "var(--abstention)",
+  "Non votant": "var(--nonvotant)",
+}[v] || "var(--nonvotant)");
+
+function normalize(s) {
+  return (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+}
+
+// Populate groupe filter dynamically, sorted by sigle
+const groupes = [...new Map(DATA.map(d => [d.groupe_sigle + "|" + d.groupe_nom, d])).values()]
+  .sort((a, b) => a.groupe_sigle.localeCompare(b.groupe_sigle));
+const groupeSelect = document.getElementById("filter-groupe");
+groupes.forEach(g => {
+  const opt = document.createElement("option");
+  opt.value = g.groupe_nom;
+  opt.textContent = `${g.groupe_sigle} — ${g.groupe_nom}`;
+  groupeSelect.appendChild(opt);
+});
+
+function renderStats(list) {
+  const order = ["Pour", "Contre", "Abstention", "Non votant"];
+  const counts = { "Pour": 0, "Contre": 0, "Abstention": 0, "Non votant": 0 };
+  list.forEach(d => { counts[d.vote] = (counts[d.vote] || 0) + 1; });
+  const total = list.length || 1;
+  const el = document.getElementById("stats");
+  el.innerHTML = order.map(label => {
+    const n = counts[label];
+    const pct = Math.round((n / total) * 100);
+    return `
+      <div class="stat-tile">
+        <div class="stat-label"><span class="stat-dot" style="background:${voteDot(label)}"></span>${label}</div>
+        <div class="stat-value">${n}</div>
+        <div class="stat-bar"><div style="width:${pct}%; background:${voteDot(label)}"></div></div>
+      </div>`;
+  }).join("");
+}
+
+function renderGrid(list) {
+  const grid = document.getElementById("grid");
+  document.getElementById("result-count").innerHTML = `<b>${list.length}</b> élu${list.length > 1 ? "s" : ""} affiché${list.length > 1 ? "s" : ""} sur <b>${DATA.length}</b>`;
+
+  if (list.length === 0) {
+    grid.innerHTML = `<div class="empty-state">Aucun élu ne correspond à ces critères.</div>`;
+    return;
+  }
+
+  grid.innerHTML = list.map(d => {
+    const territoire = d.qualite === "Député"
+      ? `${d.departement} · ${d.circonscription}`
+      : `${d.departement} (Sénat)`;
+    return `
+      <div class="card">
+        <img class="photo" src="${d.photo_url}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="info">
+          <div class="name"><a href="${d.fiche_url}" target="_blank" rel="noopener">${d.prenom} ${d.nom}</a></div>
+          <div class="role">${d.qualite} — ${territoire}</div>
+          <div class="badges">
+            <span class="pill groupe" title="${d.groupe_nom}">${d.groupe_sigle || d.groupe_nom}</span>
+            <span class="pill ${voteClass(d.vote)}">${d.vote}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+function applyFilters() {
+  const q = normalize(document.getElementById("search").value.trim());
+  const qualite = document.getElementById("filter-qualite").value;
+  const departement = document.getElementById("filter-departement").value;
+  const groupe = document.getElementById("filter-groupe").value;
+  const vote = document.getElementById("filter-vote").value;
+
+  const filtered = DATA.filter(d => {
+    if (q && !normalize(d.prenom + " " + d.nom).includes(q)) return false;
+    if (qualite && d.qualite !== qualite) return false;
+    if (departement && d.departement !== departement) return false;
+    if (groupe && d.groupe_nom !== groupe) return false;
+    if (vote && d.vote !== vote) return false;
+    return true;
+  });
+
+  renderStats(filtered);
+  renderGrid(filtered);
+}
+
+["search"].forEach(id => document.getElementById(id).addEventListener("input", applyFilters));
+["filter-qualite", "filter-departement", "filter-groupe", "filter-vote"].forEach(id =>
+  document.getElementById(id).addEventListener("change", applyFilters)
+);
+
+applyFilters();
+</script>
+</body>
+</html>

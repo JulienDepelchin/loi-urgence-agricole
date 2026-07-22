@@ -1,0 +1,42 @@
+{
+  "perimetre": "Députés et sénateurs élus dans le Nord (59) et le Pas-de-Calais (62)",
+  "genere_le": "2026-07-22",
+  "scrutin_assemblee_nationale": {
+    "numero": 8427,
+    "legislature": 17,
+    "titre": "Scrutin public sur l'ensemble du projet de loi d'urgence pour la protection et la souveraineté agricoles (texte de la commission mixte paritaire)",
+    "seance": "Deuxième séance du lundi 20 juillet 2026",
+    "resultat": {
+      "pour": 296,
+      "contre": 224,
+      "abstention": 41,
+      "votants": 561,
+      "suffrages_exprimes": 520,
+      "majorite_absolue": 261,
+      "adopte": true
+    },
+    "source_url": "https://www.assemblee-nationale.fr/dyn/17/scrutins/8427"
+  },
+  "scrutin_senat": {
+    "numero": 340,
+    "titre": "Scrutin sur l'ensemble du projet de loi d'urgence pour la protection et la souveraineté agricoles",
+    "seance": "Séance du 21 juillet 2026",
+    "resultat": {
+      "pour": 214,
+      "contre": 111,
+      "abstention": 20,
+      "votants": 345,
+      "suffrages_exprimes": 325,
+      "non_votants": 3,
+      "adopte": true
+    },
+    "source_url": "https://www.senat.fr/scrutin-public/2025/scr2025-340.html"
+  },
+  "sources_elus": "Répertoire national des élus (RNE) — fichiers elus-deputes-dep.csv et elus-senateurs-sen.csv fournis par l'utilisateur",
+  "avertissements": [
+    "Les 6e et 10e circonscriptions du Nord sont absentes du fichier RNE fourni (elus-deputes-dep.csv) — siège vacant ou export incomplet, à vérifier avant publication.",
+    "La 17e circonscription du Nord liste deux titulaires dans le RNE (Thierry Tesson, mandat depuis le 2024-07-08, puis Vincent Ledoux, mandat depuis le 2025-01-24). Le titulaire retenu est celui dont le mandat a débuté le plus récemment (Vincent Ledoux).",
+    "Le fichier Scrutins.xml.zip initialement fourni ne couvrait que la 16e législature (2022-2024, scrutins jusqu'au n°4105) et n'a pas pu être utilisé pour ce scrutin de la 17e législature ; les données de vote ont été extraites directement des pages HTML officielles de l'Assemblée nationale et du Sénat.",
+    "Les photos sont d'origine officielle (assemblee-nationale.fr / senat.fr) et sont fournies dans data/photos/ ; conserver le crédit photo indiqué dans chaque enregistrement (photo_credit)."
+  ]
+}
