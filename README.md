@@ -69,6 +69,18 @@ corrigées, avec confirmation directe de l'utilisateur :
   titulaire de la 17ᵉ circonscription.
 - Aucun élu du périmètre Nord / Pas-de-Calais n'était classé « non votant » sur les deux scrutins.
 
+### Vérification complète des 51 fiches officielles
+
+Après ces deux corrections, chacune des 51 fiches (nom, département, circonscription pour les
+députés, groupe politique) a été revérifiée individuellement contre sa page officielle
+(assemblee-nationale.fr / senat.fr). Aucun autre écart de rattachement n'a été trouvé. Deux sigles
+de groupes du Sénat, initialement déduits par erreur, ont été corrigés d'après les URLs et intitulés
+utilisés par senat.fr lui-même :
+- « Socialiste, Écologiste et Républicain » → sigle **SOC** (et non SER) — concerne Patrick Kanner
+  et Audrey Linkenheld.
+- « Les Indépendants - République et Territoires » → sigle **RTLI** (et non LIRT) — concerne
+  Marie-Claude Lermytte et Dany Wattebled.
+
 ## Pour Lovable / reconstruction de l'application
 
 - Le jeu de données est statique (un scrutin passé, pas de mise à jour en direct) : `data/elus_votes.json`
